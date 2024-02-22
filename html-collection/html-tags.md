@@ -48,10 +48,10 @@
 | `<form>`      |                | Container eines Formulars.                                                                                                            |
 | `<hr>`        |                | Eine einfache horizontale Linie                                                                                                       |
 | `<ol>`        | `<li>`         | Ordentliche Liste, sie ist Nummerriert `<li>` sind die einzelnen Listenelemente                                                       |
-| `<ul> <menu>` | `<li>`         | Unordentliche Liste, alle Einträge `<li>` haben das gleiche Symbol                                                                    |
+| `<ul>` | `<li>`         | Unordentliche Liste, alle Einträge `<li>` haben das gleiche Symbol                                                                    |
 | `<p>`         |                | Umfasst ein Text der einen Absatz darstellt                                                                                           |
 | `<table>`     |                | Tabellen, wobei `<tr>` für die Zeilen steht und `<td>` für die Zellen.                                                                |
-| `<table>`     | `<tr><th>`     | Mit `<th>` in Tabellen kann eine visuell erkennbare "erste Zeile" beschrieben werden, um z.B. Überschriften für Spalten darzustellen. |
+| `<table>`     | `<tr> <th>`     | Mit `<th>` in Tabellen kann eine visuell erkennbare "erste Zeile" beschrieben werden, um z.B. Überschriften für Spalten darzustellen. |
 
 ### Formulare ###
 | Tag | Sub-Tag | Beschreibung |
