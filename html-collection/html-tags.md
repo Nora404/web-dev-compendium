@@ -41,14 +41,14 @@
 | Tag           | Sub-Tag        | Beschreibung                                                                                                                          |
 | ------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `<br>`        |                | Zeilenumbruch                                                                                                                         |
-| `<caption>`   |                | Innerhalb von <table> Eine Überschrift für Tabellen                                                                                   |
-| `<details>`   | `<summary>`    | Inhalt kann per klick auf- und zugeklappt werden. Inhalt von <summary> bleibt stehn, auf ihn wird geklickt                            |
-| `<fieldset>`  | `<legend>`     | Zeichnet einen Rahmen um seinen Inhalt, <legend> ist die Überschrieft welche auf der Rahmenlinie steht                                |
-| `<figure>`    | `<figcaption>` | Ein Container für ein <img> welches mit <figcaption> eine Beschreibung unterhalb des Bildes bekommt                                   |
+| `<caption>`   |                | Innerhalb von `<table>` Eine Überschrift für Tabellen                                                                                 |
+| `<details>`   | `<summary>`    | Inhalt kann per klick auf- und zugeklappt werden. Inhalt von `<summary>` bleibt stehn, auf ihn wird geklickt                          |
+| `<fieldset>`  | `<legend>`     | Zeichnet einen Rahmen um seinen Inhalt, `<legend>` ist die Überschrieft welche auf der Rahmenlinie steht                              |
+| `<figure>`    | `<figcaption>` | Ein Container für ein `<img>` welches mit `<figcaption>` eine Beschreibung unterhalb des Bildes bekommt                               |
 | `<form>`      |                | Container eines Formulars.                                                                                                            |
 | `<hr>`        |                | Eine einfache horizontale Linie                                                                                                       |
-| `<ol>`        | `<li>`         | Ordentliche Liste, sie ist Nummerriert <li> sind die einzelnen Listenelemente                                                         |
-| `<ul> <menu>` | `<li>`         | Unordentliche Liste, alle Einträge <li> haben das gleiche Symbol                                                                      |
+| `<ol>`        | `<li>`         | Ordentliche Liste, sie ist Nummerriert `<li>` sind die einzelnen Listenelemente                                                       |
+| `<ul> <menu>` | `<li>`         | Unordentliche Liste, alle Einträge `<li>` haben das gleiche Symbol                                                                    |
 | `<p>`         |                | Umfasst ein Text der einen Absatz darstellt                                                                                           |
 | `<table>`     |                | Tabellen, wobei `<tr>` für die Zeilen steht und `<td>` für die Zellen.                                                                |
 | `<table>`     | `<tr><th>`     | Mit `<th>` in Tabellen kann eine visuell erkennbare "erste Zeile" beschrieben werden, um z.B. Überschriften für Spalten darzustellen. |
