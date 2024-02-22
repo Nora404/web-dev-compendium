@@ -36,33 +36,26 @@
 | `<sup>`        |             | Der Text wird klein und hochgestellt geschrieben             |
 | `<wbr>`        |             | Markiert Stelle fals der Text einen Zeilenumbruch braucht    |
 
-<!-- Inhalts Strukturierung
 
-<br>	Zeilenumbruch
-<caption>	Innerhalb von <table> Eine Überschrift für Tabellen
-<details>	Inhalt kann per klick auf- und zugeklappt werden. Inhalt von <summary> bleibt stehn, auf ihn wird geklickt
-  <summary>
-<fieldset>	Zeichnet einen Rahmen um seinen Inhalt, <legend> ist die Überschrieft welche auf der Rahmenlinie steht
-  <legend>
-<figure>	Ein Container für ein <img> welches mit <figcaption> eine Beschreibung unterhalb des Bildes bekommt
-  <figcaption>
-<form>	Container eines Formulars. Es hat meist noch die Attribute action(wo wird der Inhalt hingeschickt) und method (Wie wird er geschickt)
-  ...
-<hr>	Eine einfache horizontale Linie
-<ol>	Ordentliche Liste, sie ist Nummerriert <li> sind die einzelnen Listenelemente
-  <li>
-<ul> <menu>	Unordentliche Liste, alle Einträge <li> haben das gleiche Symbol
-  <li>
-<p>	Umfasst ein Text der einen Absatz darstellt
-<table>	Tabellen, wobei <tr> für die Zeilen steht und <td> für die Zellen. Es gibt mehrere Tags mitdenen Tabellen weiter strukturiert werden können, wie <thead> <tbody> <tfoot> ...
-  <tr>
-    <td>
-<table>	Mit <th> in Tabellen kann eine visuell erkennbare "erste Zeile" beschrieben werden, um z.B. Überschriften für Spalten darzustellen. 
-  <tr>
-    <th>
+### Inhalts Strukturierung ###
+| Tag            | Sub-Tag     | Beschreibung                                                 |
+| -------------- | ----------- | ------------------------------------------------------------ |
+| `<br>`|  |	Zeilenumbruch
+| `<caption>`|  |	Innerhalb von <table> Eine Überschrift für Tabellen |
+| `<details>`| `<summary>` |	Inhalt kann per klick auf- und zugeklappt werden. Inhalt von <summary> bleibt stehn, auf ihn wird geklickt |
+| `<fieldset>`| `<legend>` |	Zeichnet einen Rahmen um seinen Inhalt, <legend> ist die Überschrieft welche auf der Rahmenlinie steht |
+| `<figure>`| `<figcaption>` |	Ein Container für ein <img> welches mit <figcaption> eine Beschreibung unterhalb des Bildes bekommt |
+| `<form>`|  |	Container eines Formulars. Es hat meist noch die Attribute action(wo wird der Inhalt hingeschickt) und method (Wie wird er geschickt) |
+| `<hr>`|  |	Eine einfache horizontale Linie |
+| `<ol>`| `<li>` |	Ordentliche Liste, sie ist Nummerriert <li> sind die einzelnen Listenelemente |
+| `<ul> <menu>`| `<li>` |	Unordentliche Liste, alle Einträge <li> haben das gleiche Symbol |
+| `<p>`|  |	Umfasst ein Text der einen Absatz darstellt |
+| `<table>`|  |	Tabellen, wobei `<tr>` für die Zeilen steht und `<td>` für die Zellen. Es gibt mehrere Tags mitdenen Tabellen weiter strukturiert werden können, wie `<thead> <tbody> <tfoot>` ... |
+| `<table>`| `<tr><th>` |	Mit `<th>` in Tabellen kann eine visuell erkennbare "erste Zeile" beschrieben werden, um z.B. Überschriften für Spalten darzustellen.  |
 
-Formulare
-
+### Formulare ###
+| Tag            | Sub-Tag     | Beschreibung                                                 |
+| -------------- | ----------- | ------------------------------------------------------------ |
 <button>	Erstellt einen klickbaren Button/Schaltfläche
 <input type=">	Eingabefeld, wobei type Beschreibt was eingegeben werden kann
 <label for=">	Text der mit einem Formularfeld über die id verknüpft werden kann
@@ -73,8 +66,9 @@ Formulare
 <output for=">	Repräsentiert das Ergebnis einer Berechnung, wird mit id verknüpft
 <textarea>	Eingabefeld das aus mehreren Zeilen Text bestehen kann
 
-Eingebettete Informationen
-
+### Eingebettete Informationen ###
+| Tag            | Sub-Tag     | Beschreibung                                                 |
+| -------------- | ----------- | ------------------------------------------------------------ |
 <map>	Beschreibt einen Klickbaren bereich in einem <img> 
   <area>	Es können mehrere <area> in einer <map> erstellt werden
 <audio>	Einbinden von Audiodateien. Es können mehrere <source> angegeben werden. Der Browser nimmt das erste welches er Unterstützt
@@ -95,8 +89,9 @@ Eingebettete Informationen
 <video>	Bettet Videos ein, wobei mehrere Quellen angegeben werden können. Der Browser nimmt das erste welches er unterstützt
   <source>
 
-Semantik
-
+### Semantik ###
+| Tag            | Sub-Tag     | Beschreibung                                                 |
+| -------------- | ----------- | ------------------------------------------------------------ |
 <bdi>	Bidirectional Isolation, umschließt Texte die andere Zeichen haben
 <code> <samp>	Text der Computercode darstellt, wird in monospace geschrieben 
 <kbd>	Text der Tastendrücke darstellt, wird in italic geschrieben
@@ -106,10 +101,11 @@ Semantik
 <time>	Markiert eine bestimmte Zeit oder Datum
 <var>	Text der Variabeln darstellt, wird in italic geschrieben
 
-Restekiste
-
+### Restekiste ###
+| Tag            | Sub-Tag     | Beschreibung                                                 |
+| -------------- | ----------- | ------------------------------------------------------------ |
 <a href="">	Hyperlink führt zu einer anderen Seite oder Stelle
 <!- -->	Kommentar im Code
 <meter>	Repräsentiert ein Skalarwert inform eines ausgefüllten Balkens
 <progress>	Repräsentiert einen Aufgabenfortschritt inform eines Balkens
-     -->
+
