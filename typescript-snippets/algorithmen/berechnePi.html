@@ -1,0 +1,64 @@
+<!-- 
+Aufgabe: Berechne Pi mit der Leibniz-Formel
+
+Die Leibniz-Formel für Pi lautet:
+π = 4x (1- 1/3 + 1/5 - 1/7 + 1/9 ...)
+Das heißt, Pi ist gleich dem Vierfachen der Summe der unendlichen Reihe, 
+bei der abwechselnd durch ungerade Zahlen dividiert und das Vorzeichen gewechselt wird.
+
+Deine Aufgabe:
+Schreibe eine Funktion, die diese Reihe für eine bestimmte Anzahl von Termen 
+berechnet und daraus eine Näherung für Pi ermittelt.
+Je mehr Terme du verwendest, desto genauer wird die Näherung von Pi sein.
+
+Beispiel:
+Wenn deine Funktion 100 Terme verwendet, sollte sie eine Näherung von Pi zurückgeben.
+
+Hinweise:
+Du kannst eine Schleife verwenden, um über eine bestimmte Anzahl von Termen zu iterieren.
+Denke daran, das Vorzeichen bei jedem Schritt zu wechseln. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leibniz-Formel</title>
+    <script>
+        function getInput(){
+            return document.getElementById("input").value;
+        }
+
+        function setOutput(fn){
+            const input = parseInt(getInput());
+            const output = document.getElementById("output");
+            const result = calculatePi(input);
+
+            output.innerHTML = result;
+        }
+
+        function calculatePi(steps){
+            let fraction = 3;
+            let result = 1;
+
+            for(let i = 0; i < steps; i++){
+                if(i % 2 === 0){
+                    result -= (1/fraction);
+                } else {
+                    result += (1/fraction);
+                }
+                fraction += 2
+            }
+            return result*4            
+        }
+    </script>
+</head>
+
+<body>
+    <input id="input" type="number" value="0">
+    <button onclick="setOutput()">Berechne Pi</button>
+    
+    <p><span id="output"></span></p>
+</body>

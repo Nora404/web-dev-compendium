@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h2>Builder</h2>
+
+    <div style="width: 800px;">
+        <h2>Wofür</h2>
+        Das Builder Pattern wird verwendet, um die Konstruktion komplexer Objekte zu vereinfachen und zu entkoppeln. 
+        Es ist ideal, wenn ein Objekt aus vielen Teilen oder Konfigurationen besteht, deren Aufbau schrittweise erfolgt. 
+        Statt einen Konstruktor mit vielen Parametern zu haben (was zu unleserlichem Code führen kann), ermöglicht das Builder Pattern, 
+        Objekte schrittweise über eine flüssige Schnittstelle (fluent interface) aufzubauen.
+
+        <h2>Struktur</h2>
+        Das Muster besteht aus dem 'Builder', einer Schnittstelle, die Schritte zum Erstellen eines komplexen Objekts definiert, 
+        und konkreten 'Builder'-Klassen, die diese Schnittstelle implementieren und die eigentliche Erstellung durchführen. 
+        Es gibt außerdem eine 'Director'-Klasse, die den Erstellungsprozess steuert, und das 'Product', das das fertige Objekt darstellt.
+
+        <h2>Funktionsweise</h2>
+        Der Client initialisiert den Builder und ruft dann schrittweise Methoden auf, um Teile des Produkts zu erstellen oder zu konfigurieren. 
+        Diese Methoden sind oft verkettet (fluent interface), sodass sie in einer eleganten, lesbaren Art und Weise aufgerufen werden können. 
+        Nachdem alle notwendigen Schritte ausgeführt wurden, liefert der Builder das endgültige Produkt aus. 
+        Dieser Prozess kann durch einen Director gesteuert werden, der die Reihenfolge der Bauschritte definiert. 
+        Dadurch wird der Code klarer und die Konstruktion des Objekts wird von dessen Repräsentation getrennt.
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!-- 
+Aufgabe: Gruppiere Zahlen nach ihrer Quersumme
+Gegeben ist ein Array von positiven Ganzzahlen. Deine Aufgabe ist es, 
+die Zahlen in dem Array so zu gruppieren, dass alle Zahlen mit derselben Quersumme zusammengefasst werden.
+
+Beispiel:
+Input: [31, 12, 22, 14, 33]
+Output: { 4: [31, 22], 3: [12], 5: [14], 6: [33] }
+
+Anforderungen:
+Schreibe eine Funktion, die ein Array von Zahlen als Eingabe nimmt und ein Objekt zurückgibt, 
+in dem die Schlüssel die Quersummen sind und die Werte Arrays von Zahlen mit dieser Quersumme sind.
+Die Quersumme einer Zahl ist die Summe aller ihrer Ziffern. Zum Beispiel hat die Zahl 31 die Quersumme 4, weil 3 + 1 = 4.
+
+Hinweise:
+Überlege, wie du die Quersumme einer Zahl berechnen kannst. Eine Möglichkeit ist, 
+die Zahl in ihre einzelnen Ziffern aufzuspalten und diese dann zu addieren.
+Du kannst ein JavaScript-Objekt verwenden, um die Gruppen von Zahlen zu speichern. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quersumme</title>
+    <script>
+        const numbers = [31, 12, 22, 14, 33];
+
+        function quersumme(arr){
+            let result = {}
+
+            for(let i = 0; i < arr.length; i++){
+                let toStr = arr[i].toString();
+                let digits = toStr.split("");
+                let summ = 0;
+
+                for(let j = 0; j < digits.length; j++){
+                    summ += Number(digits[j]);
+                }
+                
+                if(!result[summ]){
+                    result[summ] = []
+                }
+
+                result[summ].push(arr[i]);
+            }
+
+            console.log(result);
+            return result;
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="quersumme(numbers)">Klick</button>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!-- 
+Aufgabe: Implementiere lineare und binäre Suchfunktionen
+
+Teil 1: Lineare Suche
+Schreibe eine Funktion für die lineare Suche, die ein Array und einen Wert als Eingabe nimmt.
+Die Funktion sollte jedes Element des Arrays durchgehen und überprüfen, ob es dem gesuchten Wert entspricht.
+Wenn der Wert gefunden wird, sollte die Funktion den Index des Wertes zurückgeben. Wenn der Wert nicht im Array ist, sollte die Funktion -1 zurückgeben.
+
+Teil 2: Binäre Suche
+Schreibe eine Funktion für die binäre Suche. Diese Methode ist effizienter als die lineare Suche, funktioniert aber nur bei sortierten Arrays.
+Die Funktion sollte ein sortiertes Array und einen Wert als Eingabe nehmen.
+Die binäre Suche halbiert wiederholt das Array, in dem gesucht wird, und vergleicht den mittleren Wert des Arrays mit dem gesuchten Wert. 
+Abhängig davon, ob der gesuchte Wert größer oder kleiner als der mittlere Wert ist, setzt sie die Suche im entsprechenden Teil des Arrays fort.
+Wie bei der linearen Suche, sollte die Funktion den Index des Wertes zurückgeben, wenn er gefunden wird, und -1, wenn er nicht im Array ist.
+Beispiel:
+
+Lineare Suche: Input: [5, 3, 8, 4], Wert: 8, Output: 2
+Binäre Suche: Input: [3, 4, 5, 8], Wert: 8, Output: 3 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lineare und Binäre Suche</title>
+    <script>
+        const arr = [4, 6, 3, 9, 1, 7, 2, 5, 8];
+
+        function getInput(){
+            return document.getElementById("input").value;
+        }
+
+        function setOutput(fn){
+            const input = parseInt(getInput());
+            const output = document.getElementById("output");
+
+            const result = fn === "lin" ? lin(input) : bin(input);
+
+            output.innerHTML = result;
+        }
+
+        function lin(input){
+            console.log(arr);
+            let index = -1;
+            for(let i = 0; i < arr.length; i++){
+                if(input === arr[i]){
+                    index = i;
+                }
+            }
+            return index
+        }
+
+        function bin(input) {
+            console.log("test bin");
+            let sortArr = [...arr].sort((a, b) => a - b);
+
+            let index_anfang = 0;
+            let index_ende = sortArr.length - 1;
+
+            while (index_anfang <= index_ende) {
+                let index = index_anfang + Math.floor((index_ende - index_anfang) / 2);
+
+                if (sortArr[index] === input) {
+                    return index; // Element gefunden
+
+                } else if (sortArr[index] < input) {
+                    index_anfang = index + 1; // Suche im rechten Teil
+
+                } else {
+                    index_ende = index - 1; // Suche im linken Teil
+                }
+            }
+            return -1; // Element nicht gefunden
+        }
+
+    </script>
+</head>
+
+<body>
+    <input id="input" type="number" value="0"><br>
+    [4, 6, 3, 9, 1, 7, 2, 5, 8] <button onclick="setOutput('lin')">Suche linear</button><br>
+    [1, 2, 3, 4, 5, 6, 7, 8, 9] <button onclick="setOutput('bin')">Suche binär</button><br>
+    
+    <p><span id="output"></span></p>
+</body>

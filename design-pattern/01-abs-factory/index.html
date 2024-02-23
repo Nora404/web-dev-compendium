@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <h2>Abstract Factory</h2>
+
+    <div style="width: 800px;">
+        <h2>Wofür</h2>
+        Das Abstract Factory Pattern wird verwendet, um Familien von zusammengehörigen oder voneinander abhängigen Objekten zu erstellen, ohne deren konkrete Klassen zu spezifizieren. Es ist besonders nützlich in Situationen, in denen ein System gegenüber verschiedenen Konfigurationen oder Abhängigkeiten flexibel bleiben soll. Dieses Muster ermöglicht es, dass ein System unabhängig von der Art der spezifischen Objekte, die es erstellt, und den damit verbundenen Details arbeiten kann.
+
+        <h2>Struktur</h2>
+        Das Muster besteht aus abstrakten Fabrikklassen, die Schnittstellen zur Erstellung von abstrakten Produkten definieren. Für jede Produktfamilie gibt es eine konkrete Implementierung dieser Fabrik, die die spezifischen Produkte erstellt. Die Client-Klasse verwendet die Schnittstellen der abstrakten Fabrik, um die gewünschten Produkte zu erstellen, ist sich aber der konkreten Implementierung der Produkte nicht bewusst.
+
+        <h2>Funktionsweise</h2>
+        <ul>
+            <li>Der Client benötigt ein oder mehrere Produkte, die zu einer Produktfamilie gehören.</li>
+            <li>Anstatt direkt die konkreten Produktklassen zu instanziieren, verwendet der Client eine abstrakte Fabrik, um die benötigten Produkte zu erstellen.</li>
+            <li>Die abstrakte Fabrik definiert die Methoden zur Erstellung verschiedener Produkte, die konkreten Fabriken implementieren diese Methoden, um spezifische Produkte herzustellen.</li>
+            <li>Der Client interagiert mit den Produkten über ihre abstrakten Schnittstellen, was bedeutet, dass der Client unabhängig von den konkreten Produktklassen operieren kann.</li>
+            <li>Wenn eine Änderung in der Produktfamilie oder in der Art der erstellten Produkte erforderlich ist, kann der Client einfach eine andere konkrete Fabrik verwenden, ohne seinen Code zu ändern.</li>
+        </ul>
+        Das Abstract Factory Pattern fördert eine lose Kopplung und erleichtert die Erweiterbarkeit und Wartbarkeit, indem es die Erstellung konkreter Produktimplementierungen von ihrem Gebrauch trennt.
+    </div>
+
+</body>
+</html>

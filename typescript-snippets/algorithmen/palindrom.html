@@ -1,0 +1,58 @@
+<!-- 
+Aufgabe: Überprüfe, ob ein String ein Palindrom ist
+Ein Palindrom ist ein Wort, Satz, Zahl oder eine andere Sequenz von Zeichen, 
+die vorwärts und rückwärts gelesen gleich bleibt. Beispiele für Palindrome sind "Anna", "otto" oder "12321".
+
+Deine Aufgabe:
+Schreibe eine Funktion, die einen String als Eingabe nimmt und überprüft, 
+ob dieser String ein Palindrom ist. Die Funktion sollte true zurückgeben, 
+wenn der String ein Palindrom ist, und false, wenn er keines ist.
+
+Anforderungen:
+Die Überprüfung sollte Groß- und Kleinschreibung ignorieren.
+Die Funktion sollte auch Leerzeichen und Satzzeichen ignorieren, 
+sodass ganze Sätze überprüft werden können 
+(z.B. sollte "Ein Neger mit Gazelle zagt im Regen nie" als Palindrom erkannt werden).
+
+Beispiel:
+Input: "Anna"
+Output: true
+
+Input: "Hallo Welt"
+Output: false
+
+Hinweise:
+Du kannst den String umkehren und vergleichen, ob er gleich dem Original ist.
+Überlege, wie du den String bereinigen kannst, um nur die relevanten Zeichen zu überprüfen. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrom</title>
+    <script>
+        function isPalindrom(){
+            let element = document.getElementById("input").value;
+            let cleanText = element.toLowerCase().replace(/[^a-z0-9]/g, ""); 
+            let arr1 = cleanText.split("");
+            let arr2 = arr1.slice().reverse(); 
+
+            for (let i = 0; i < arr1.length / 2; i++) {
+                if (arr1[i] !== arr2[i]) {
+                    console.log(false);
+                    return false;
+                }
+            }
+            console.log(true);
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <input id="input" type="text">
+    <button onclick="isPalindrom()">Klick</button>
+</body>

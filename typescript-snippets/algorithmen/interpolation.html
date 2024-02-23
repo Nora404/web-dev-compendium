@@ -1,0 +1,24 @@
+<!-- 
+Aufgabe: Implementiere eine Interpolationssuchfunktion
+
+Die Interpolationssuche ist ähnlich wie die binäre Suche, aber anstatt immer in der Mitte des Suchbereichs zu suchen, 
+berechnet sie die Position anhand der Verteilung der Werte im Array.
+Das macht sie schneller, insbesondere für große und gleichmäßig verteilte Daten.
+
+Funktionsweise:
+
+Die Interpolationssuche beginnt damit, eine Position im Array zu interpolieren, 
+an der sich der gesuchte Wert befinden könnte, basierend auf dem niedrigsten und höchsten Wert im Suchbereich und dem gesuchten Wert.
+Die Formel für die Interpolationsposition ist: pos = low + [((high - low) / (arr[high] - arr[low])) * (x - arr[low])], 
+wobei low und high die unteren und oberen Grenzen des Suchbereichs sind und x der gesuchte Wert ist.
+Nach der Berechnung der Position wird überprüft, ob sich der gesuchte Wert an dieser Position befindet.
+Wenn der Wert nicht an der berechneten Position ist, wird der Suchbereich entsprechend angepasst und die Suche fortgesetzt.
+Anforderungen:
+
+Deine Funktion sollte ein sortiertes Array und einen Wert als Eingabe nehmen.
+Die Funktion sollte den Index des Wertes zurückgeben, wenn er gefunden wird, und -1, wenn er nicht im Array ist.
+Hinweise:
+
+Die Interpolationssuche ist besonders effektiv bei gleichmäßig verteilten Daten.
+Ähnlich wie bei der binären Suche, solltest du sicherstellen, dass dein Algorithmus nicht in einer Endlosschleife stecken bleibt. 
+-->

@@ -1,0 +1,76 @@
+<!-- 
+Aufgabe: Schreibe eine Funktion zur Berechnung der Fibonacci-Zahl
+
+Deine Aufgabe ist es, eine Funktion zu schreiben, 
+die eine Zahl n als Eingabe nimmt und die n-te Zahl in der Fibonacci-Sequenz zurückgibt. 
+Die Fibonacci-Folge ist die unendliche Folge natürlicher Zahlen, 
+bei der jede Zahl die Summe der beiden ihr vorangehenden Zahlen ist.
+Beachte, dass die Sequenz mit 0 beginnt 
+(d.h., der 0. Wert ist 0, der 1. Wert ist 1, der 2. Wert ist 1, der 3. Wert ist 2, usw.).
+
+Anforderungen:
+Deine Funktion sollte rekursiv sein, das heißt, sie sollte sich selbst aufrufen, 
+um die vorherigen Fibonacci-Zahlen zu berechnen.
+Überlege dir, wie du die Effizienz deiner Funktion verbessern kannst, 
+zum Beispiel durch Verwendung von Memoization, um bereits berechnete Werte zu speichern.
+(Die Aufgabe ließe sich auch mit einem iterativen Ansatz lösen)
+
+Beispiele:
+Input: 5
+Output: 5
+
+Input: 7
+Output: 13
+
+Hinweise:
+Eine einfache rekursive Funktion kann ineffizient werden, wenn sie für große Zahlen verwendet wird, 
+da sie viele Berechnungen mehrfach durchführt. Überlege, wie du das verbessern kannst.
+Denk daran, dass die Fibonacci-Sequenz mit 0 und 1 beginnt. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+    <script>
+        function getInput(){
+            return document.getElementById("input").value;
+        }
+
+        function setOutput(fn){
+            const input = parseInt(getInput());
+            const output = document.getElementById("output");
+            const result = fn === 0 
+                            ? fibonacciIterativ(input)
+                            : fibonacciRecursive(input); 
+            output.innerHTML = result;
+        }
+
+        function fibonacciIterativ(input){
+            let memo = [0,1];
+            for(let i = 1; i < input; i++){
+                memo.push(memo[i-1] + memo[i]);
+            }
+            return memo[memo.length -1];
+        }
+
+        function fibonacciRecursive(input, memo = [0,1]){                       
+            if(memo[input] !== undefined){
+                return memo[input];
+            }
+            memo[input] = fibonacciRecursive(input -1, memo) + fibonacciRecursive(input -2, memo)
+            return memo[input];
+        }
+    </script>
+</head>
+
+<body>
+    <input id="input" type="number" value="0">
+    <button onclick="setOutput(0)">Iterativ</button>
+    <button onclick="setOutput(1)">Recursive</button>
+    
+    <p><span id="output"></span></p>
+</body>

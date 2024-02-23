@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wochentage</title>
+    <style>
+        th, td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="week" id="weeklySelection" onchange="updateTable()"><br><br>
+
+    <table id="table">
+        <tr id="th"></tr>
+        <tr id="tb"></tr>
+    </table>
+
+    <script>
+    const th = document.getElementById("th");
+    const tb = document.getElementById("tb");
+    const input = document.getElementById("weeklySelection");
+    const days = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+
+    // Fill the table with the weekdays and dates
+    function fillTable() {
+        for (let i = 0; i < 5; i++) {
+            th.innerHTML += `<th>${days[(i+1)%7]}</th>`;           
+            tb.innerHTML += `<td>${getDateHeadline(i)}</td>`;    
+        }
+    }
+
+    // Get a String with the weekday and date
+    // daysOffset: 0 = Monday of the selected week, 1 = Tuesday, ...
+    function getDateHeadline(daysOffset = 0){
+        let date = getLastMonday();
+        date.setDate(date.getDate() + daysOffset); 
+
+        const weekdayAndDate = `${days[date.getDay()]} (${formatDate(date)})`;
+        return weekdayAndDate;
+    }
+
+    // Get the date of the last Monday
+    function getLastMonday(){
+        let date = new Date();
+        while (date.getDay() !== 1) {
+            date.setDate(date.getDate() - 1);
+        }
+        return date;
+    }
+
+    // Format the date to dd.mm
+    function formatDate(date) {
+        let day = ("0" + date.getDate()).slice(-2);
+        let month = ("0" + (date.getMonth() + 1)).slice(-2);
+        return `${day}.${month}`;
+    }
+
+    // Update the table when the user selects a new week
+    function updateTable(){
+        const newDate = input.valueAsDate || getLastMonday();
+
+        // Set newDate to the Monday of the selected week
+        newDate.setDate(newDate.getDate() - newDate.getDay() + 1);
+
+        // Clear the table headers and bodies
+        th.innerHTML = "";
+        tb.innerHTML = "";
+
+        // Update getLastMonday function to return newDate
+        getLastMonday = function() { return newDate; };
+
+        // Fill the table with the weekdays and dates
+        fillTable();
+    }
+
+    fillTable();
+    </script>
+</body>
+</html>

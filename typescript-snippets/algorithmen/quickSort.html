@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+    <script>
+        function setOutput(){
+            const result = quickSort([11, 4, 6, 2, 10, 3, 8, 5, 7, 9, 1]); 
+            output.innerHTML = result;
+        }
+
+        function quickSort(arr){
+            // Wenn das Array leer oder nur ein Element hat, ist es bereits sortiert
+            if(arr.length <= 1){
+                return arr;
+            }
+
+            // Wähle das erste Element als Pivot
+            const pivot = arr[0];
+            // Alle Werte kleiner als der Pivot werden in das linke Array geschrieben, alle anderen in das rechte
+            const left = [];
+            const right = [];
+
+            // Iteriere über das Array und fülle die Arrays left und right
+            // Mit slice(1) wird das erste Element, der Pivot, übersprungen
+            arr.slice(1).forEach(el => el < pivot ? left.push(el) : right.push(el));
+
+            // Rekursiv sortiere left und right und füge sie mit dem Pivot zusammen
+            return quickSort(left).concat(pivot, quickSort(right));
+        }
+    </script>
+</head>
+
+<body>
+    11, 4, 6, 2, 10, 3, 8, 5, 7, 9, 1<br>
+    <button onclick="setOutput()">Sortiere ...</button>
+    
+    <p><span id="output"></span></p>
+</body>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <h2>Singelton</h2>
+
+    <div style="width: 800px;">
+        <h2>Wofür</h2>
+        Das Singleton Pattern wird verwendet, um sicherzustellen, dass eine Klasse nur eine einzige Instanz hat, während sie einen globalen Zugriffspunkt zu dieser Instanz bietet. Es ist nützlich in Szenarien, wo genau eine Instanz einer Klasse systemweit benötigt wird, wie bei Konfigurationsmanagern, Verbindungsmanagern (z.B. Datenbankverbindungen) oder bei der Nutzung von Ressourcen, die systemweit geteilt werden sollen.
+        
+        <h2>Struktur</h2>
+        Das Singleton Pattern besteht aus einer Klasse, die eine Methode zur Erhaltung ihrer einzigen Instanz bereitstellt. Diese Klasse verhindert die direkte Instanziierung von außen durch einen privaten Konstruktor und kontrolliert den Zugriff auf die einzige Instanz durch eine öffentliche statische Methode, oft benannt als getInstance().
+
+        <h2>Funktionsweise</h2>
+        <ul>
+            <li><b>Privater Konstruktor:</b> Die Singleton-Klasse hat einen privaten Konstruktor, um zu verhindern, dass andere Klassen Instanzen davon erstellen.</li>
+            <li><b>Private statische Instanz:</b> Innerhalb der Klasse wird eine private statische Variable, die die einzige Instanz der Klasse speichert, deklariert.</li>
+            <li><b>Öffentliche statische Methode:</b> Es gibt eine öffentliche statische Methode (z.B. getInstance()), die die einzige Instanz der Klasse zurückgibt. Wenn keine Instanz existiert, wird sie innerhalb dieser Methode erstellt.</li>
+            <li><b>Thread-Sicherheit:</b> In multithreading Umgebungen muss sichergestellt werden, dass die Klasse thread-sicher ist, Das bedeutet, dass sie so konzipiert sein muss, dass sie korrekt funktioniert, auch wenn mehrere Threads gleichzeitig auf sie zugreifen. Dies wird oft durch Synchronisationsmechanismen erreicht.</li>
+            <li><b>Globale Zugänglichkeit:</b> Die einzige Instanz der Singleton-Klasse ist global zugänglich durch die getInstance()-Methode.</li>
+        </ul>
+        Das Singleton Pattern stellt sicher, dass es nur eine Instanz einer Klasse gibt und bietet einen einfachen Zugriff darauf. Es ist wichtig zu beachten, dass dieses Muster kritisch betrachtet werden sollte, da es die Prinzipien der Modularität und des Testens beeinträchtigen kann, besonders wenn es übermäßig verwendet wird.
+    </div>
+
+</body>
+</html>
