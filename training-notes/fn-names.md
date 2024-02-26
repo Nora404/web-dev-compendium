@@ -44,7 +44,7 @@ Delete:
 - unsubscribe
 
 
-### Übersetzung und Beschreibung ### 
+### Übersetzung ### 
 
 de | en
 ------- | -------
