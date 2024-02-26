@@ -1,6 +1,6 @@
 ### CRUD ###
 
-Es gibt die technischen CRUD-Operationen (Create, Read, Update, Delete) und die semantischen CRUD-Operationen (Insert, Select, Update, Delete).  
+Es gibt die technischen CRUD-Operationen (Create, Read, Update, Delete)  
 Für Funktionen sollten fachliche Namen verwendet werden, die die Bedeutung der Operation beschreiben. Hier ist eine Übersicht der CRUD-Operationen und ihrer fachlichen Namen:
 
 Create: 
